@@ -64,6 +64,15 @@ Slate notes grow endlessly on their own, so the toggle does not appear there.
 Zoom runs from **0.3×** — an overview of a long page — to **5×**. Returning to
 exactly 1× restores the resting sheet width.
 
+Pinching works everywhere a sketch does: in the full-size editor, in a
+` ```quicksketch ` block inside a note, and in a slate note. A block and a slate
+note keep the note scroller in charge of vertical scrolling, so pinching there
+magnifies the sheet without taking the page over.
+
+Once a sketch is zoomed past 1× it is wider than the note column, so the block
+scrolls sideways to keep the right-hand edge reachable, and a small pill appears
+in its corner with the current level. Tapping the pill returns to 100%.
+
 A one-finger scroll now **coasts** after the finger lifts, with velocity taken
 from the tail of the drag. A drag-scroll that stops dead reads as slow however
 fast the drag was, which is what made this feel heavier than the note around it.

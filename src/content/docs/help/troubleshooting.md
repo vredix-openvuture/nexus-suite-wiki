@@ -60,6 +60,17 @@ the whole declaration is dropped.
 Use it directly inside `color-mix()`. The plugin normalises its own values to
 whatever the running version expects.
 
+## A dropdown or a checkbox is the wrong colour
+
+Obsidian draws part of its own interface from an accent it keeps separately from
+the theme, and it defaults to a blue-violet. Before plugin 0.25.1 and theme
+0.7.1 nothing handed it the palette, so a menu panel came out in the palette and
+the selected row inside it did not.
+
+Update both. If it persists, the theme is the older copy: check *Settings →
+Appearance → Themes* for the version, and reload the theme after BRAT updates
+it — Obsidian does not always pick up a new `theme.css` on its own.
+
 ## The sketch toolbar looks different on two devices
 
 Probably deliberate: **Just this device** in Settings → Quick Sketch gives that

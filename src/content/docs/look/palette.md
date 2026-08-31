@@ -43,6 +43,21 @@ Not a fixed palette: it follows the live wallust snippet, so the vault takes its
 colours from the wallpaper. It only does anything when the Velumeron desktop
 shell is running and writing that snippet.
 
+## What the accent reaches
+
+`color3` is not only the theme's accent. Obsidian paints a good part of its own
+interface — the selected row of a menu, suggestion lists, checkboxes, toggles,
+sliders, focus rings — from an accent of its own, which it builds from three
+numbers rather than a colour. The plugin converts the palette's `color3` into
+those numbers and hands them over, so those surfaces follow the palette too.
+
+This needs the **Nexus theme at 0.7.1 or newer**. On an older theme the panel of
+a dropdown follows the palette while the selected row inside it stays on
+Obsidian's default blue-violet.
+
+If you have set an accent by hand in *Appearance → Accent color*, the palette
+overrides it while a fixed palette is active.
+
 ## Slots
 
 Every palette defines the same slots, and the theme derives everything from
