@@ -1,0 +1,51 @@
+---
+title: Nexus Suite
+description: The complete documentation for Nexus Suite, one Obsidian plugin instead of a dozen.
+template: splash
+hero:
+  tagline: One Obsidian plugin instead of a dozen. A dashboard, a drawing surface, tasks and a calendar, a kanban board, a planner and a vault sync — every module a switch of its own, so you only run what you use.
+  actions:
+    - text: Install it
+      link: /start/install/
+      icon: right-arrow
+    - text: What it actually is
+      link: /start/what-it-is/
+      variant: minimal
+    - text: Source
+      link: https://github.com/vredix-openvuture/nexus-suite
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Find what you came for
+
+<CardGrid>
+	<LinkCard title="Quick Sketch" href="/sketch/overview/" description="Draw in a note with pen, touch or mouse. Pen types, selection, a ruler, stickers, export and search." />
+	<LinkCard title="Tasks and planning" href="/tasks/projects/" description="Projects as notes, an agenda block, a kanban board and a month on one screen." />
+	<LinkCard title="Vault sync" href="/sync/overview/" description="The whole vault to a WebDAV server, three-way, with daily backups." />
+	<LinkCard title="Every setting" href="/reference/settings/" description="Each key, its default and what it does." />
+</CardGrid>
+
+## What is here
+
+<CardGrid>
+	<Card title="Twenty-six modules" icon="puzzle">
+		Each one has a switch. A module that is off costs nothing: no listeners,
+		no styles, no commands. See [One switch per module](/concepts/modules/).
+	</Card>
+	<Card title="Blocks that are their data" icon="document">
+		A kanban board, a planner and an agenda live inside their own fence in a
+		note. They survive without the plugin and travel with the file.
+	</Card>
+	<Card title="Mobile as well as desktop" icon="phone">
+		One bundled file, no runtime require of sibling modules. Where something
+		genuinely cannot run on a phone, the docs say so rather than leaving a
+		button that does nothing.
+	</Card>
+	<Card title="Nothing leaves the machine" icon="approve-check">
+		Handwriting recognition and speech run programs you installed. The vault
+		sync talks to your server. There is no service in the middle.
+	</Card>
+</CardGrid>

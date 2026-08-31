@@ -1,0 +1,58 @@
+/* Nexus Suite wiki theme.
+   Starlight already gives the layout this project wanted: a navigation rail on
+   the left, the page on the right. This only re-tunes the palette and a little
+   of the rhythm, so the docs read like the plugin they describe.
+
+   The accent is the theme's own "Ember & Prussian" signature: a molten Rain
+   Boots orange over a deep aubergine ground. */
+
+:root {
+	--sl-color-accent-low: #4a1a10;
+	--sl-color-accent: #c8471f;
+	--sl-color-accent-high: #ffb99c;
+
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #f0dfd8;
+	--sl-color-gray-2: #c4aba2;
+	--sl-color-gray-3: #8a6a63;
+	--sl-color-gray-4: #58403c;
+	--sl-color-gray-5: #38242c;
+	--sl-color-gray-6: #26121b;
+	--sl-color-black: #1b0f16;
+
+	--sl-content-width: 50rem;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #ffd9c9;
+	--sl-color-accent: #b83f18;
+	--sl-color-accent-high: #5a1d0a;
+
+	--sl-color-white: #22161b;
+	--sl-color-gray-1: #33232a;
+	--sl-color-gray-2: #4c3840;
+	--sl-color-gray-3: #7b6068;
+	--sl-color-gray-4: #a08b92;
+	--sl-color-gray-5: #ddd0d4;
+	--sl-color-gray-6: #efe6e9;
+	--sl-color-gray-7: #f7f2f4;
+	--sl-color-black: #ffffff;
+}
+
+/* Reference pages are mostly tables of keys and defaults. They read far better
+   with the key column held in one place and digits lining up. */
+.sl-markdown-content table {
+	font-size: 0.9rem;
+	font-variant-numeric: tabular-nums;
+}
+.sl-markdown-content table code {
+	white-space: nowrap;
+}
+
+/* A long settings table should scroll inside itself rather than pushing the
+   whole page sideways. */
+.sl-markdown-content table {
+	display: block;
+	overflow-x: auto;
+	max-width: 100%;
+}
