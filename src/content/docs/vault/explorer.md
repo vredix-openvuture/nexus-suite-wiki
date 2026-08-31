@@ -5,22 +5,30 @@ sidebar:
   order: 1
 ---
 
-## Folder cards
+## Folder rails
 
-Top-level folders render as tinted blocks rather than as plain rows, with their
-children inside the same block — so an expanded folder reads as one thing.
+Top-level folders are marked by a two-pixel rail on their left edge.
 
 | Setting | Default | |
 |---|---|---|
-| Folder background | on | The tinted blocks |
-| Intensity | 22 | The base strength of the tint |
+| Folder background | on | The rails |
+| Intensity | 22 | How present the rail is, from a hairline to a firm mark |
 
-The tint runs from warm at the top of the list to cool at the bottom, so the
-list has a direction as well as a grouping.
+The rail carries the palette: warm Ember at the top of the list, cooling to
+Prussian at the foot, so the list has a direction as well as a grouping. The
+sweep is spread over seven positions, because a vault has four to eight
+top-level folders and a gradient sized for more would leave a real one entirely
+in the warm end.
 
-:::note[Under review]
-Whether the blocks stay as they are is an open question — four alternatives are
-being compared. Nothing changes until one is picked.
+Hovering a folder lifts its row and brightens its rail, so the hover reads as
+*this folder* rather than *this row*.
+
+:::note[This replaced filled blocks]
+Folders used to be tinted blocks. A sidebar is short of exactly one thing —
+width — and a block spends it twice, on its own margin and on its inner padding.
+A folder is also a place rather than a weighted category, and with no coloured
+field competing, the accent is free for the file you are actually looking at.
+The full reasoning is in the theme's `docs/style-guide.md`.
 :::
 
 ## Hiding parts of the interface
