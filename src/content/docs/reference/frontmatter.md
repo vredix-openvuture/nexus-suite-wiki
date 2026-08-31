@@ -40,7 +40,7 @@ sidebar:
 | `sketch` | The id of the sketch belonging to a slate note |
 | `sketch-bg` | `native` · `paper` · `white` · `black`, for this note |
 
-## QuickNote
+## Quick Note
 
 | Key | Meaning |
 |---|---|

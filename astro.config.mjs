@@ -88,7 +88,7 @@ export default defineConfig({
 						{ label: 'Editorial marks', slug: 'writing/editorial' },
 						{ label: 'Focus and sprints', slug: 'writing/focus-sprint' },
 						{ label: 'Typography', slug: 'writing/typography' },
-						{ label: 'QuickNote', slug: 'writing/quicknote' },
+						{ label: 'Quick Note', slug: 'writing/quicknote' },
 					],
 				},
 				{

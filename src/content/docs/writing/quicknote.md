@@ -1,11 +1,11 @@
 ---
-title: QuickNote
+title: Quick Note
 description: A note you speak instead of type.
 sidebar:
   order: 6
 ---
 
-Command **Quick note (speak it)** opens a recorder. Say the thing, press stop,
+Command **Quick Note (speak it)** opens a recorder. Say the thing, press stop,
 and it becomes a note.
 
 It is the sister of Quick Sketch: the same idea — catch the thought before it is
@@ -63,6 +63,25 @@ in it is just a path.
 Set a **language** as a BCP-47 tag (`de-DE`, `en-GB`). If the device has no
 recogniser at all, the settings page says so rather than letting recording start
 and fail.
+
+Obsidian on Android draws in the system WebView, and a WebView is not a browser:
+the Web Speech API is a Chrome feature that WebView does not ship. Open
+**Settings → Quick Note** on the device with the browser engine selected — the
+page states outright whether *this* device has a recogniser.
+
+## What it needs, before you speak
+
+The recorder refuses to start, and says why, when the engine cannot work here:
+
+| Situation | What you see |
+|---|---|
+| Local engine on a phone or tablet | "The local recogniser runs a program on the machine, and a phone or tablet has no shell for it." |
+| Local engine, no command set | The setting to fill in, with an example. |
+| Browser engine, no recogniser on the device | "This device has no browser recogniser." |
+| Local engine, command names a program that is not installed | The program's own name, not `spawn … ENOENT`. |
+
+That check used to happen *after* the recording, which meant speaking a
+paragraph and then losing it.
 
 ## Settings
 

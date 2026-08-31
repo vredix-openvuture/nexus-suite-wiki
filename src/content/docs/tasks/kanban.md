@@ -21,9 +21,10 @@ notes: Projects/Roadmap
 ## Backlog
 - [ ] Rework the tab bar
 - [ ] [[Kanban module|Kanban]] @2026-08-25 #plugin
-## In Arbeit @2
+  the toolbar first, then the overflow menu
+## In progress @2
 - [ ] Vikunja buckets
-## Erledigt
+## Done
 - [x] Pinned tabs
 ```
 ````
@@ -37,17 +38,32 @@ notes: Projects/Roadmap
 | `[[Note\|Alias]]` | The card points at a note; the alias is what is shown |
 | `@2026-08-25` | A due date |
 | `#tag` | A tag chip on the card |
+| An indented line under a card | Its description, shown under the title |
 
 Column colours come from what the column **is**, read off its own name — nobody
 should have to configure that "Done" is green. Both English and German names are
-recognised.
+recognised, so renaming a column does not cost you its colour.
+
+The default columns for a new board are `Backlog / In progress / Done`
+(Settings → Kanban).
 
 Commands: **Insert a kanban board**, **New kanban board (note)**.
 
+### The card editor
+
+**Clicking a card opens it**: text, description, due date, tags, done, which
+column it sits in, and the note it points at — with **To the note** as a button,
+so a card that has a note can still be edited. Ctrl/⌘-click goes straight to the
+note instead, for a board used as an index.
+
+The description is shown on the card under its title, **four lines at most** and
+then an ellipsis; the whole text stays in the editor and in the block.
+
 ### The card menu
 
-Open a note, open it in a new tab, unlink it, create a note for the card, link
-an existing note, rename, set a due date, mark done, delete.
+Open the note, open it in a new tab, unlink it, create a note for the card, link
+an existing note, edit, set a due date, mark done, move to another column,
+delete.
 
 ### Anything it does not understand is kept
 

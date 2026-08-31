@@ -20,7 +20,7 @@ sidebar:
 | Setting | Default |
 |---|---|
 | Sketch folder | `Inbox/Quicksketch` |
-| QuickNote folder | `Inbox/Quicknote` |
+| Quick Note folder | `Inbox/Quicknote` |
 | Banner folder | `attachments/banners` |
 | Task projects | `Tasks/Projects` |
 | Task items | `Tasks/Items` |

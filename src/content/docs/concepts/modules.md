@@ -41,7 +41,7 @@ That is why the list is long without the plugin being heavy for any one person.
 | `kanban` | Kanban | Columns and cards in a note, plus the board view of your tasks |
 | `planner` | Planner | A month on one screen, one line per day |
 | `vaultSync` | Vault sync | The whole vault to a WebDAV server, with daily backups |
-| `quicknote` | QuickNote | A note you speak instead of type |
+| `quicknote` | Quick Note | A note you speak instead of type |
 
 ## Defaults
 

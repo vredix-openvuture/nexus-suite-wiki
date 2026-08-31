@@ -146,7 +146,7 @@ Server accounts, local calendars, events and tasks.
 | `tasks.projectsFolder` | `"Tasks/Projects"` |
 | `tasks.itemsFolder` | `"Tasks/Items"` |
 | `tasks.providerDefault` | `"local"` |
-| `tasks.buckets` | `["Backlog","In Arbeit","Wartet","Erledigt"]` |
+| `tasks.buckets` | `["Backlog","In progress","Waiting","Done"]` |
 
 ### `propertyHider` — Properties
 
@@ -239,7 +239,7 @@ Columns and cards in a note — plus the board view of your tasks.
 | Key | Default |
 |---|---|
 | `enabled` | `true` |
-| `buckets` | `["Backlog","In Arbeit","Erledigt"]` |
+| `buckets` | `["Backlog","In progress","Done"]` |
 | `notesFolder` | `""` |
 | `boardsFolder` | `""` |
 | `compact` | `false` |
@@ -252,7 +252,7 @@ A month on one screen, one line per day — the paper-calendar view.
 |---|---|
 | `enabled` | `true` |
 
-### `quicknote` — QuickNote
+### `quicknote` — Quick Note
 
 A note you speak instead of type.
 

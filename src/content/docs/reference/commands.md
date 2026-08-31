@@ -29,7 +29,7 @@ module is on.
 | New task project | CalDAV |
 | New task | CalDAV |
 | New event | CalDAV |
-| Quick note (speak it) | QuickNote |
+| Quick Note (speak it) | Quick Note |
 | Capture a scan | Ink Capture |
 
 ## Opening things
