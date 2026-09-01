@@ -65,3 +65,23 @@ Private/notes.md
 Point it at an **empty folder** and let it upload. Starting from an empty server
 is the one case with no ambiguity at all: nothing is recorded, so nothing can be
 mistaken for a deletion.
+
+Then open the **second** device and let it pull the vault down. Folders are
+created there a segment at a time, on purpose: `adapter.mkdir` is not the same
+call on desktop and mobile, and the device receiving a vault it does not have
+yet is the one that has to build every path.
+
+## When a run goes wrong
+
+**Settings → Vault sync → The last run** is where to look:
+
+- what the run did — up, down, removed, conflicts, failed — and how long it took
+- the first five failures in full, path and reason
+- a **Sync** button that runs it and reports right underneath
+
+Every failure, not only the five shown, also goes to the console as
+`[Nexus] sync failed on "<path>": <reason>`.
+
+A run that stops without changing anything says so too: an empty server listing
+where files were expected, or a plan that would delete a third of what is known,
+refuses rather than guesses — see [Conflicts](/sync/conflicts/).
