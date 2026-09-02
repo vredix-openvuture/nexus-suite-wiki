@@ -4,3 +4,6 @@ dist/
 
 node_modules/
 .DS_Store
+
+# Local working rules — useful here, not something to publish.
+claude-important.md
