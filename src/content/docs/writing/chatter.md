@@ -1,11 +1,11 @@
 ---
-title: Quick Note
+title: Chatter
 description: A note you speak instead of type.
 sidebar:
   order: 6
 ---
 
-Command **Quick Note (speak it)** opens a recorder. Say the thing, press stop,
+Command **Chatter (speak a note)** opens a recorder. Say the thing, press stop,
 and it becomes a note.
 
 It is the sister of Quick Sketch: the same idea — catch the thought before it is
@@ -66,7 +66,7 @@ and fail.
 
 Obsidian on Android draws in the system WebView, and a WebView is not a browser:
 the Web Speech API is a Chrome feature that WebView does not ship. Open
-**Settings → Quick Note** on the device with the browser engine selected — the
+**Settings → Chatter** on the device with the browser engine selected — the
 page states outright whether *this* device has a recogniser.
 
 ## What it needs, before you speak
@@ -93,3 +93,21 @@ paragraph and then losing it.
 | Language | `en-US` |
 | Track new notes as tasks | off |
 | Open the note afterwards | on |
+
+## Why the key still says `quicknote`
+
+The settings key and the command id are unchanged. An id is what Obsidian stores
+a hotkey against, and a key lives in a file you already have — renaming either
+would silently unbind a hotkey or need a migration, and buy nothing the display
+name does not already give. The same reasoning kept `tasksCalendar` when the
+CalDAV half went.
+
+The folder default `Inbox/Quicknote` stays for the same kind of reason: it is a
+path, not a label, and moving it would strand the notes already in it.
+
+## Not to be confused with Scratch
+
+The dashboard has a card you type into that saves a timestamped note. It used to
+be called Quicknote as well, which is half of why the name was confusing — it
+has nothing to do with speech. It is **Scratch** now. This page is the
+microphone; that one is the pad.

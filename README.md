@@ -32,12 +32,12 @@ Requires Node. Nothing else — the wiki has no back end.
 - **Quick Sketch.** Eight pages: the toolbar, the tools, the page, pen buttons,
   export, search and slate notes.
 - **Tasks and planning.** Projects, a note as a task, the agenda block, kanban,
-  the planner, CalDAV and Vikunja.
+  the planner, calendars and Vikunja.
 - **Vault sync.** How it decides, setting it up, conflicts, backups, and what a
   shared vault is not.
-- **Writing.** Banners, callouts, editorial marks, focus and sprints,
-  typography, QuickNote.
-- **Around the vault.** Explorer, folder notes, icons, search, workspaces.
+- **Writing.** Banners, callouts, typography, Chatter.
+- **Around the vault.** Explorer, folder notes, icons, search, workspaces and
+  boards, the capture hub, the galaxy, and the sidebar panels.
 - **Look.** Style, palette, and what happens on a phone or a tablet.
 - **Reference.** Every setting with its default, every command, every code
   block, every frontmatter key, every path.
@@ -49,7 +49,8 @@ Requires Node. Nothing else — the wiki has no back end.
   not listed there is unreachable, and a slug that does not exist breaks the
   build. That is the check that a page was finished.
 - **The settings reference is generated** from the plugin's own
-  `DEFAULT_SETTINGS`, so a default cannot drift away from the code.
+  `DEFAULT_SETTINGS` by `npm run gen:settings`, so a default cannot drift away
+  from the code.
 - **Every internal link is checked** against the built pages before a commit.
 
 <br>
@@ -58,8 +59,10 @@ Requires Node. Nothing else — the wiki has no back end.
 
 - **Screenshots.** Every feature page would carry one; none do yet.
 - **Deploy.** The site builds to `dist/` and is not published anywhere.
-- **A page per module for the ones that only appear in tables.** Ink Capture and
-  the calendar views deserve their own pages.
+- **A page per module for the ones that only appear in tables.** Ink Capture
+  and the Mini calendar deserve their own pages — Ink Capture is described from
+  the capture hub's side only, and its sources and inbox watcher are nowhere.
+  The Calendar module has one under Tasks and planning.
 
 <br>
 

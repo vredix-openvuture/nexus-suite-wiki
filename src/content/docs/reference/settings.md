@@ -1,6 +1,6 @@
 ---
 title: Every setting
-description: Each key in data.json, with its default.
+description: Each key in data.json that has a default, and what that default is.
 sidebar:
   order: 1
 ---
@@ -9,9 +9,9 @@ sidebar:
 <vault>/.obsidian/plugins/nexus-suite/data.json
 ```
 
-One object per module, keyed by the module id. Every key has a default in the
-code, so a missing key is never an error — which is what lets a vault from an
-older version keep working.
+One object per module, keyed by the module id. Every key below has a default in
+the code, so a missing key is never an error — which is what lets a vault from
+an older version keep working.
 
 :::caution[Merged one level deep]
 Settings are merged one level deep on load. A key nested **two** levels down
@@ -20,13 +20,29 @@ object. The code therefore reads such keys defensively, and this is worth
 knowing before adding one.
 :::
 
-Credentials are **not** here. They live in `localStorage` per device — see
+## What is not in these tables
+
+**Bags that start empty** and fill up as you use the plugin: the icon map
+(`icons.map`), the dashboard's layout and per-device profiles
+(`homepage.layout`, `.profiles`, `.profileNames`), the collapsed banner groups
+(`banner.collapsed`), the per-pen overrides and gesture map
+(`quicksketch.penConfig`, `.penMap`) and the per-tool colours and palettes
+(`.toolColors`, `.toolPalettes`). They have no default to print, so they have
+no row — a `data.json` in use holds more keys than this page lists.
+
+**Credentials.** They live in `localStorage` per device, in plain text — see
 [Where everything is stored](/concepts/storage/).
+
+**Anything that describes one machine.** The sync server, its device name, the
+sync schedule and the task accounts live under `devices.<device id>`, so a
+synced `data.json` cannot carry one device's connection onto another. That
+object is empty by default and therefore absent below. See
+[What belongs to a device](/concepts/devices/).
 
 ## Where a value is read
 
 The authoritative source is `src/constants.js` (`DEFAULT_SETTINGS`). This page
-is generated from it.
+is generated from it by `scripts/gen-settings.mjs`; do not edit it by hand.
 
 ### `banner` — Banner
 
@@ -87,7 +103,8 @@ Rendered start page with cards, stats and quick actions.
 | `widgets` | `[]` |
 | `stats` | `[{"kind":"total"},{"kind":"streak"}]` |
 | `ribbon` | `true` |
-| `openOnStartup` | `true` |
+| `startup` | `"tab"` |
+| `openWhenEmpty` | `false` |
 | `perDevice` | `false` |
 
 ### `search` — Search
@@ -116,18 +133,18 @@ Replaces -- ... -> while you type.
 | `arrows` | `true` |
 | `symbols` | `true` |
 
-### `calendar` — Calendar
+### `calendar` — Mini calendar
 
-Month view over your daily notes.
+Month grid over your daily notes, in the sidebar.
 
 | Key | Default |
 |---|---|
 | `enabled` | `true` |
 | `ribbon` | `true` |
 
-### `tasksCalendar` — CalDAV
+### `tasksCalendar` — Calendar
 
-Server accounts, local calendars, events and tasks.
+Local calendars, events and tasks — the full-page view.
 
 | Key | Default |
 |---|---|
@@ -140,9 +157,10 @@ Server accounts, local calendars, events and tasks.
 | `syncOnStartup` | `true` |
 | `syncIntervalMin` | `15` |
 | `conflictPolicy` | `"server"` |
-| `accounts` | `[]` |
 | `localCalendars` | `[]` |
 | `hiddenCalendars` | `[]` |
+| `planner.folder` | `"Planner"` |
+| `planner.pattern` | `"YYYY-MM"` |
 | `tasks.projectsFolder` | `"Tasks/Projects"` |
 | `tasks.itemsFolder` | `"Tasks/Items"` |
 | `tasks.providerDefault` | `"local"` |
@@ -177,6 +195,18 @@ Save and switch pane layouts.
 | `enabled` | `true` |
 | `selectMode` | `"release"` |
 
+### `galaxy` — Galaxy
+
+The vault as a turnable map of its links.
+
+| Key | Default |
+|---|---|
+| `enabled` | `true` |
+| `ribbon` | `true` |
+| `drift` | `true` |
+| `linkDistance` | `60` |
+| `showOrphans` | `true` |
+
 ### `explorer` — Explorer
 
 Folder cards and the ribbon in the file tree.
@@ -186,6 +216,8 @@ Folder cards and the ribbon in the file tree.
 | `enabled` | `true` |
 | `folderBg` | `true` |
 | `intensity` | `22` |
+| `hideAttachments` | `false` |
+| `attachmentFolder` | `""` |
 
 ### `folderNotes` — Folder Notes
 
@@ -223,18 +255,9 @@ An icon for any folder or file in the explorer.
 |---|---|
 | `enabled` | `true` |
 
-### `board` — Board
-
-Every note of a folder as cards inside a normal note.
-
-| Key | Default |
-|---|---|
-| `enabled` | `true` |
-| `statusProperty` | `"status"` |
-
 ### `kanban` — Kanban
 
-Columns and cards in a note — plus the board view of your tasks.
+Columns and cards in a note, or every note of a folder — plus the board view of your tasks.
 
 | Key | Default |
 |---|---|
@@ -243,6 +266,7 @@ Columns and cards in a note — plus the board view of your tasks.
 | `notesFolder` | `""` |
 | `boardsFolder` | `""` |
 | `compact` | `false` |
+| `statusProperty` | `"status"` |
 
 ### `planner` — Planner
 
@@ -252,7 +276,7 @@ A month on one screen, one line per day — the paper-calendar view.
 |---|---|
 | `enabled` | `true` |
 
-### `quicknote` — Quick Note
+### `quicknote` — Chatter
 
 A note you speak instead of type.
 
@@ -273,10 +297,6 @@ The whole vault to a WebDAV server, with daily backups and conflict copies.
 | Key | Default |
 |---|---|
 | `enabled` | `false` |
-| `url` | `""` |
-| `deviceName` | `""` |
-| `intervalMin` | `15` |
-| `onStart` | `true` |
 | `config` | `true` |
 | `backup` | `true` |
 | `keepBackups` | `30` |
@@ -291,53 +311,6 @@ Rename, merge and remove tags across the vault.
 | Key | Default |
 |---|---|
 | `enabled` | `true` |
-
-### `focus` — Focus
-
-Dims everything but the line you are writing.
-
-| Key | Default |
-|---|---|
-| `enabled` | `false` |
-| `dim` | `true` |
-| `scope` | `"line"` |
-| `dimOpacity` | `45` |
-| `typewriter` | `false` |
-| `typewriterOffset` | `50` |
-| `sound` | `false` |
-| `soundStyle` | `"soft"` |
-| `soundVolume` | `25` |
-| `bell` | `false` |
-
-### `sprint` — Sprint
-
-Timed writing against a word goal.
-
-| Key | Default |
-|---|---|
-| `enabled` | `true` |
-| `minutes` | `15` |
-| `words` | `300` |
-| `useTime` | `true` |
-| `useWords` | `true` |
-| `statusBar` | `true` |
-| `focusDuringSprint` | `false` |
-| `doneMessage` | `""` |
-
-### `editorial` — Editorial
-
-Margin notes, pull quotes, drop caps, ornaments.
-
-| Key | Default |
-|---|---|
-| `enabled` | `true` |
-| `margin` | `true` |
-| `marginWidth` | `200` |
-| `pullquote` | `true` |
-| `dropcap` | `false` |
-| `ornament` | `true` |
-| `ornamentGlyph` | `"❦"` |
-| `taskStates` | `true` |
 
 ### `inkCapture` — Ink Capture
 
@@ -408,7 +381,7 @@ Draw in a note with pen, touch or mouse.
 
 ### `theme` — Theme
 
-Interface style, colour palette, spacing and corner radius.
+Interface style and colour palette.
 
 | Key | Default |
 |---|---|

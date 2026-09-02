@@ -33,9 +33,10 @@ Ticking works everywhere — the project note, the [agenda block](/tasks/agenda/
 the tasks page — and always writes to the task note **and** back to the
 checklist.
 
-A repeating task rolls its due date forward instead of closing. A completed task
-leaves the checklist only once the server has it: until the sync confirms,
-un-ticking is still possible.
+A repeating task rolls its due date forward instead of closing — except on
+Vikunja, whose server owns the repeat, so the task is only marked done and the
+sync pushes that. A completed task leaves the checklist only once the server has
+it: until the sync confirms, un-ticking is still possible.
 
 ## The tasks page
 
@@ -54,7 +55,7 @@ sits one level down.
 | `nexus-type` | `task` or `project` |
 | `nexus-project` | The project a task belongs to |
 | `nexus-parent` | The parent of a subproject |
-| `nexus-provider` | `local` · `caldav` · `vikunja` |
+| `nexus-provider` | `local` · `vikunja` |
 | `nexus-account` | Which configured account |
 | `nexus-id` | The id on the server, once it has one |
 | `status` | `needs-action` or `completed` |

@@ -20,11 +20,12 @@ sidebar:
 | Setting | Default |
 |---|---|
 | Sketch folder | `Inbox/Quicksketch` |
-| Quick Note folder | `Inbox/Quicknote` |
+| Chatter folder | `Inbox/Quicknote` |
 | Banner folder | `attachments/banners` |
 | Task projects | `Tasks/Projects` |
 | Task items | `Tasks/Items` |
 | Ink capture (paper) | `Inbox/Paper` |
+| Planner notes | `Planner`, named `YYYY-MM` |
 | Calendar data | `_nexus`, when `dataLocation` is `vault` |
 
 ## On the sync server
@@ -45,7 +46,7 @@ Three keys in `localStorage`, none of which travel with the vault:
 | Key | What it is |
 |---|---|
 | `nexus-suite-device-id` | A random id for this installation |
-| `nexus-suite-cred-<account>` | The sign-in details for one account |
+| `nexus-suite-cred-<id>` | The sign-in details for one connection, in plain text |
 | `nexus-suite-sketchbar` | This device's sketch toolbar, if it has its own |
 
 ## The sketch sidecar

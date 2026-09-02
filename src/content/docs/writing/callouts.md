@@ -10,7 +10,7 @@ built-in one.
 
 ````md
 > [!decision] Why WebDAV
-> Because CalDAV is a calendar protocol.
+> Because the vault is files, and a file server already speaks files.
 ````
 
 Command **Insert a callout** offers the list.

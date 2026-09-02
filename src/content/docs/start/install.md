@@ -26,8 +26,11 @@ The theme is a separate repository and installs the same way:
 2. `vredix-openvuture/nexus-theme`
 3. Select **Nexus** in Settings → Appearance.
 
-The two work apart, but the plugin's Theme tab (style, palette, spacing, corner
-radius) drives variables the theme reads, so together they behave as one thing.
+The two work apart, but the plugin's Theme tab (style and palette) drives
+variables the theme reads, so together they behave as one thing. Geometry —
+radii, borders, spacing — comes from one token block the two share, declaration
+for declaration, so an element cannot have a different corner in the plugin than
+in the theme.
 
 ## By hand
 

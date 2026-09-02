@@ -31,10 +31,16 @@ with **one** device instead of three:
 | Border | yes | yes |
 | Shadow | yes | no |
 | Gap | 12 px | 8 px |
-| Radius | 16 px | 10 px |
+| Radius | 15 px | 10 px |
 
 Border plus shadow plus gap say the same thing three times and make the columns
 look narrower than they are.
+
+Both columns are the shared geometry tokens, not a second set of numbers. A
+device block sets `--nx-radius`, `--nx-gap` and `--nx-chip-shadow` — that last
+one is the *Shadow* row — and the phone block turns `--nx-r-tile` down to 6 px
+as well, so list rows keep a soft edge on a screen where nothing else has one.
+See [Geometry is not a setting](/look/style/#geometry-is-not-a-setting).
 
 Folder blocks lose their outer margin on a tablet: the double inset — card
 border plus block border — eats the folder names in an already narrow column.

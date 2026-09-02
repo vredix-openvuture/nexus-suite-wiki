@@ -11,7 +11,7 @@ sidebar:
 |---|---|---|
 | Your notes | Tasks, projects, boards, planners, agendas — all of it | Yes |
 | `.obsidian/plugins/nexus-suite/data.json` | Every setting on the [settings page](/reference/settings/) | Yes |
-| `localStorage` | Secrets, and the choices that belong to one device | **No** |
+| `localStorage` | Secrets, and a handful of choices that belong to one device | **No** |
 | The sketch folder | One standalone `.svg` per drawing | Yes |
 
 ## Why secrets are not in `data.json`
@@ -25,12 +25,35 @@ So every credential goes to `localStorage`, per device:
 | Key | Holds |
 |---|---|
 | `nexus-suite-device-id` | A random id for this installation |
-| `nexus-suite-cred-<id>` | User name and secret for one account |
+| `nexus-suite-cred-<id>` | The sign-in details for one connection |
 | `nexus-suite-sketchbar` | This device's sketch toolbar, if it has its own |
 
-That includes CalDAV passwords, Vikunja API tokens and the WebDAV app password.
-It means you type them once per device, which is the trade — and it is the right
-way round.
+That includes Vikunja API tokens and the WebDAV app password. `<id>` is
+`vaultsync` for the sync server and the account's own id for a Vikunja account,
+and [removing a connection](/concepts/devices/#connections) empties its entry.
+
+It means you type a secret once per device, which is the trade — and it is the
+right way round.
+
+## Credentials are not encrypted
+
+They are stored as plain JSON in `localStorage`, in the clear. Anything that can
+read the browser storage of your Obsidian installation — another plugin, a
+process running as you, someone at the unlocked machine — can read them.
+
+What `localStorage` buys is that a secret does not travel: it stays out of the
+vault, out of the sync, out of the backups and off the second machine. That is
+the whole of the protection, and it is worth being exact about it. Use an app
+password or a scoped API token, never your account password, and revoke it on
+the server if a device is lost.
+
+## What is under a device's own key
+
+Settings that describe **one machine** — the sync server, its user name, this
+device's name, the sync schedule and the Vikunja accounts — are in `data.json`
+but under `devices.<device id>`, so a synced file cannot carry one device's
+connection onto another. See
+[What belongs to a device](/concepts/devices/).
 
 ## The sketch sidecar
 

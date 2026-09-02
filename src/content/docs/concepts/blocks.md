@@ -56,10 +56,21 @@ made in the rendered version wins. Reload the note after editing the source.
 | Fence | What it renders | Page |
 |---|---|---|
 | `quicksketch` | A drawing pad | [Quick Sketch](/sketch/overview/) |
-| `nexus-kanban` | A board with columns and cards | [Kanban](/tasks/kanban/) |
+| `nexus-kanban` | A board — cards in the fence, or the notes of a folder | [Kanban](/tasks/kanban/) |
 | `nexus-planner` | A month or a week, one line per day | [The planner](/tasks/planner/) |
 | `nexus-agenda` | One day: events, tasks, backlinks | [The agenda block](/tasks/agenda/) |
-| `nexus-board` | Every note of a folder as cards | [Workspaces and boards](/vault/workspaces/) |
+| `nexus-board` | Every note of a folder as cards | [Workspaces and boards](/vault/workspaces/#nexus-board) |
+| `nexus-graph` | The same notes as a grid or a web of links | [Workspaces and boards](/vault/workspaces/#nexus-graph) |
 | `folder-overview` | The contents of a folder | [Folder notes](/vault/folder-notes/) |
 | `columns` | Side-by-side text | [Typography](/writing/typography/) |
 | `nexus-separator` | An image separator | [Banners](/writing/banner/) |
+
+## When the block is not the data
+
+Three of them are a **question**, not a store. `folder-overview`, `nexus-board`
+and `nexus-graph` — and `nexus-kanban` with `source: folder` — hold their
+configuration in the fence and read their contents from the vault. Dragging a
+card on one of those writes into the note it stands for, not into the block.
+
+That is the same principle one level up: the answer lives in the note's own
+frontmatter, so it survives without the plugin and any other block can read it.

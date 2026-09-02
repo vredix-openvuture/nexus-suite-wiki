@@ -48,7 +48,7 @@ Thirteen pages, around six hundred checks: the toolbar and its options row,
 selection and transforms, the canvas and the spacing tool, objects and the
 ruler, pen gestures, export, sketch search and the OCR command line, the kanban
 board writing itself back, notes as tasks, the planner, the sync decision table
-with the ZIP writer, and Quick Note.
+with the ZIP writer, and Chatter.
 
 ### Checked outside the harness too
 

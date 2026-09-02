@@ -40,13 +40,17 @@ becomes worth adding.
 - **Document what the code does**, not what it should do. Where something is
   unfinished, say so on the page rather than only in the source.
 - **Reference material goes in tables, explanations in prose.** Do not mix them.
-- **The settings reference is generated** from the plugin's `DEFAULT_SETTINGS`.
-  Regenerate it rather than editing it by hand, or it will drift from the code:
+- **The settings reference is generated** from the plugin's `DEFAULT_SETTINGS`
+  and `NX_MODULES`. Regenerate it rather than editing it by hand, or it will
+  drift from the code:
 
   ```bash
-  cd ~/DEV/OBSIDIAN-nexus-DEV/.obsidian/plugins/nexus-suite
-  node -e "…"   # see the git history of reference/settings.md
+  npm run gen:settings          # reads the plugin at its default path
+  node scripts/gen-settings.mjs <path-to-plugin>
   ```
+
+  The prose above the tables lives in `scripts/gen-settings.mjs`, so the whole
+  page is one output and nothing has to be merged back by hand.
 
 - **Check internal links before committing**, anchors included. A dead link here
   is a defect like any other.

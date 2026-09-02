@@ -7,10 +7,17 @@ sidebar:
 
 ## Does it work on mobile?
 
-Yes, as one bundled file with no runtime `require` of sibling modules. Two
-things need a desktop shell because they run a program on the machine —
-handwriting recognition and the local speech recogniser — and each says so where
-it appears rather than leaving a button that does nothing.
+Yes, as one bundled file with no runtime `require` of sibling modules. Three
+things need a desktop shell, and each says so where it appears rather than
+leaving a button that does nothing:
+
+- **handwriting recognition** and the **local speech recogniser**, because they
+  run a program on the machine;
+- the **Vikunja task sync**, which sits behind the same guard — a phone reads
+  and writes the task notes, and the next desktop sync carries them to the
+  server.
+
+[Vault sync](/sync/overview/) is not one of them: it runs everywhere.
 
 ## What happens to my notes if I uninstall it?
 
@@ -31,18 +38,35 @@ Twelve plugins that each style the file explorer produce twelve sets of CSS
 fighting each other and a vault that breaks in a new way whenever one of them
 updates. One plugin means one place where those decisions are made. The cost is
 size, and the answer to that is that every module has a switch and an off module
-registers nothing at all.
+does nothing at all.
 
 ## Does anything leave my machine?
 
 Only what you point at your own server. There is no service in the middle:
 
 - **Vault sync** talks to your WebDAV server.
-- **CalDAV and Vikunja** talk to your server.
+- **Vikunja** talks to your server.
 - **Handwriting recognition** runs a program you installed.
 - **Speech**, with the local recogniser, runs a program you installed. The
   browser recogniser is the exception, and the settings say so — most builds
   send the audio to the browser vendor.
+
+## Where are my sign-in details kept, and are they encrypted?
+
+In `localStorage` on the device that typed them, as plain text. **They are not
+encrypted.** Anything that can read your Obsidian installation's browser storage
+can read them.
+
+What that placement buys is that a secret never travels: it stays out of
+`data.json`, out of the vault, out of the sync and out of the backups, so
+copying the vault to a second machine does not copy the password with it. That
+is the whole of the protection. Use an app password or a scoped API token rather
+than your account password, and revoke it on the server if you lose a device.
+
+Settings that merely *describe* a device — the sync server, its device name, the
+schedule, the Vikunja accounts — are in `data.json`, but under that device's own
+key, so they sync and back up without one machine overwriting another. See
+[What belongs to a device](/concepts/devices/).
 
 ## Can two people work in the same vault at once?
 

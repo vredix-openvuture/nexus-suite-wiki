@@ -19,7 +19,7 @@ sidebar:
 |---|---|
 | `nexus-project` | The project a task belongs to |
 | `nexus-parent` | The parent of a subproject |
-| `nexus-provider` | `local` · `caldav` · `vikunja` |
+| `nexus-provider` | `local` · `vikunja` |
 | `nexus-account` | Which configured account |
 | `nexus-id` | The id on the server |
 | `nexus-color` | A project's colour |
@@ -40,7 +40,7 @@ sidebar:
 | `sketch` | The id of the sketch belonging to a slate note |
 | `sketch-bg` | `native` · `paper` · `white` · `black`, for this note |
 
-## Quick Note
+## Chatter
 
 | Key | Meaning |
 |---|---|

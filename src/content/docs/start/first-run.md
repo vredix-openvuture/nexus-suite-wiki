@@ -19,12 +19,12 @@ Settings → **Theme**. Two decisions that do not depend on each other:
 
 ## 2. Turn off what you do not want
 
-Every module has a switch at the top of its own settings tab. A module that is
-off registers no commands, no styles and no listeners, so there is no cost to
+Every module has a switch at the top of its own settings tab. An off module
+renders nothing, styles nothing and touches no note, so there is no cost to
 leaving it off — and no reason to keep one on "just in case".
 
-The ones that do nothing until you configure them: **CalDAV**, **Vault sync**,
-**Dashboard**, **Focus**.
+The ones that do nothing until you configure them: **Calendar**, **Vault
+sync**, **Dashboard**.
 
 ## 3. If you draw
 
@@ -34,15 +34,21 @@ and which are in the `⋯` menu is yours to set, and it can differ per device.
 
 ## 4. If you keep tasks
 
-**CalDAV** is only needed for a server. For local tasks, turn on the module and
-run `New task project` — a project is a note, and its tasks are notes. See
-[Projects and tasks](/tasks/projects/).
+Turn on **Calendar** and run `New task project` — a project is a note, and its
+tasks are notes. See [Projects and tasks](/tasks/projects/). A Vikunja account
+is only needed if the tasks also live on a server; everything works without one.
+
+The module is called Calendar because it is also the full-page calendar and the
+local calendars. Its settings key is still `tasksCalendar`.
 
 ## 5. If you want the vault on more than one machine
 
 [Vault sync](/sync/setup/) needs a WebDAV URL and an app password. Read
 [How it decides](/sync/overview/) first: it is a three-way sync and it will
 refuse to run in situations where a two-way one would quietly destroy things.
+
+Each device adds its own server: the connection belongs to the machine, not to
+the vault. See [What belongs to a device](/concepts/devices/).
 
 :::tip[Do this one first]
 Point it at an empty folder and let the first sync upload. Starting from an

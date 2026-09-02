@@ -61,3 +61,34 @@ block change height as you page through the year, and that jump reads as a bug
 every single time.
 
 On a narrow screen the seven columns become two.
+
+## The calendar shows the same line
+
+The full-page calendar's **month view** shows the planner's line for a day under
+the day number, and you can type one straight into the cell. Below 620px a cell
+is only 56px tall, so the empty *Plan…* hint is dropped there — a hint on every
+day would eat a third of the cell — and a day that already has a line still
+shows it and can still be edited. It sits *above* the event chips — the line says what the day is for, the chips say what is in it,
+and a cell clips from the bottom, so below them a busy day would hide exactly
+the sentence worth reading. One line, clipped: no cell changes height because of
+what was typed. The sidebar **mini calendar** only marks a day that has a line;
+a sidebar column is too narrow for a sentence.
+
+Both write into the same block, so the two can never disagree. A month resolves
+to one note by two settings on the **Calendar** tab:
+
+| Setting | Default | |
+|---|---|---|
+| Planner folder | `Planner` | Empty means the vault root. |
+| File name | `YYYY-MM` | `YYYY`, `YY`, `MM`, `MMM`, `MMMM`. A slash makes a subfolder, so `YYYY/YYYY-MM` files each year separately. |
+
+September 2026 is then `Planner/2026-09.md`, holding one `nexus-planner` block.
+Nothing is guessed and nothing is written until you type:
+
+- a month with no note shows nothing and **creates no file** — the first line
+  you type creates the note *with* the block;
+- a note that already exists but holds no ```` ```nexus-planner ```` block is an
+  empty month, and a first line is **appended** rather than replacing anything
+  in it;
+- a note with more than one planner block uses the **first**; the rest are left
+  alone.

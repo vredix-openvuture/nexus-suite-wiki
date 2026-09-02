@@ -67,7 +67,7 @@ export default defineConfig({
 						{ label: 'The agenda block', slug: 'tasks/agenda' },
 						{ label: 'Kanban', slug: 'tasks/kanban' },
 						{ label: 'The planner', slug: 'tasks/planner' },
-						{ label: 'CalDAV and Vikunja', slug: 'tasks/caldav' },
+						{ label: 'Calendars and Vikunja', slug: 'tasks/calendar' },
 					],
 				},
 				{
@@ -85,10 +85,8 @@ export default defineConfig({
 					items: [
 						{ label: 'Banners', slug: 'writing/banner' },
 						{ label: 'Callouts', slug: 'writing/callouts' },
-						{ label: 'Editorial marks', slug: 'writing/editorial' },
-						{ label: 'Focus and sprints', slug: 'writing/focus-sprint' },
 						{ label: 'Typography', slug: 'writing/typography' },
-						{ label: 'Quick Note', slug: 'writing/quicknote' },
+						{ label: 'Chatter', slug: 'writing/chatter' },
 					],
 				},
 				{
@@ -99,6 +97,9 @@ export default defineConfig({
 						{ label: 'Icons', slug: 'vault/icons' },
 						{ label: 'Search', slug: 'vault/search' },
 						{ label: 'Workspaces and boards', slug: 'vault/workspaces' },
+						{ label: 'The capture hub', slug: 'vault/captures' },
+						{ label: 'The galaxy', slug: 'vault/galaxy' },
+						{ label: 'Sidebar panels', slug: 'vault/panels' },
 					],
 				},
 				{

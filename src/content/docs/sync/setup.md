@@ -9,24 +9,37 @@ Settings → **Vault sync**. It starts off.
 
 ## Server
 
+**Add a server** opens a modal with four fields; afterwards the server is a row
+in a list.
+
 | Field | Example |
 |---|---|
+| This device is called | `Desktop` — it goes in the name of a conflict copy |
 | Server URL | `https://cloud.example.com/remote.php/dav/files/me/Vault` |
 | User name | your account |
-| App credential | an app-specific one, not your account login |
+| App password | an app-specific one, not your account login |
 
 **Test** asks the server whether it is there and whether it knows you, and
 answers in a sentence rather than a status code: the credentials were refused,
 the account is not allowed into that folder, that folder does not exist, or the
 URL answered but not as WebDAV.
 
-Credentials go to `localStorage` on this device and never into the vault — which
-matters here more than anywhere else, because the vault is what gets uploaded.
+A server **cannot be edited** once saved. A new URL against the old credential
+is half a connection, and the first news of that is a failed sync — so to change
+one, remove it and add it again. **Remove** clears the stored credential with
+it, which the sync used to leave behind. One vault lives on one server, so the
+list stops at one entry.
 
-**This device is called** shows up in the name of a conflict copy, so you can
-tell which machine wrote it.
+The connection belongs to **this device**, not to the vault: the URL, the user
+name and this device's name sit under the device's own key in `data.json`, and
+the credential in `localStorage`, unencrypted. Every device connects itself.
+That matters more here than anywhere else, because the vault is what gets
+uploaded — see [What belongs to a device](/concepts/devices/).
 
 ## When
+
+Both of these belong to the device as well: a phone on mobile data and a desktop
+rarely want the same number.
 
 | Setting | Default | |
 |---|---|---|
@@ -59,6 +72,14 @@ Archive/
 *.tmp
 Private/notes.md
 ```
+
+`data.json` itself does sync, settings included — that is wanted. What used to
+travel with it was the other machine's server and its device name, which is why
+both machines ended up calling themselves the same thing. Those now sit under
+each device's own key inside the file, so it can travel without one device's
+answer becoming another's. Everything else on this tab is one answer for the
+whole vault and is meant to travel: *Carry the settings too*, the **Never sync**
+list, the conflict rule, *Shared vault* and the backups.
 
 ## The first run
 
