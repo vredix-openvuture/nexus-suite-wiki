@@ -20,7 +20,10 @@ Top right of the note, third in the row after the banner and background buttons.
 | Hollow icon | This note has no drawing yet — the first tap creates one |
 | Filled icon | This note has one |
 
-The way back is the `file-text` button in the Sketch tab's toolbar.
+The way back is the `file-text` button in the Sketch tab's toolbar — it switches
+**that** tab to the text rather than opening the note somewhere else. There is
+no close button: closing the tab closes the drawing, and the blank paper
+auto-grow left below the last stroke is trimmed then.
 
 The id and an empty sidecar are written the first time you open the drawing, so
 the tab always opens on a real file rather than on "not found". A sidecar that
@@ -44,10 +47,17 @@ replaced by an empty one instead of an error.
 
 Only at 100 %: zoomed in, sideways is how you look around the sheet.
 
-The page list shows every page as a thumbnail — the sidecars are ordinary SVGs,
-so the preview is the file itself. From there you can open a page, add one, or
-take one out of the note. Taking a page out leaves its `.svg` where it is: a
-drawing is worth more than the line that pointed at it.
+A new page inherits **page one's paper** — colour, texture and grid. A second
+page on different paper is not a second page, it is a different pad.
+
+The page count is the button to the list: every page as a thumbnail — the
+sidecars are ordinary SVGs, so the preview is the file itself. There you open a
+page, add one, name one, or take one out of the note.
+
+A name is typed over "Page 2" and lives in that page's own sidecar, next to its
+strokes, so it travels with the drawing rather than with the note that lists it.
+Taking a page out leaves its `.svg` where it is: a drawing is worth more than
+the line that pointed at it.
 
 ## Why a tab and not the note
 

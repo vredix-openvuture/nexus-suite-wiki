@@ -37,14 +37,17 @@ for a note and for the Sketch tab.
 | Spacing | tool | menu | yes |
 | Insert | tool | menu | yes |
 | Ruler | action | menu | yes |
-| Outline | action | menu | yes |
-| Export | action | menu | yes |
+| This drawing | tool | menu | yes |
 | Undo | action | yes | yes |
 | Redo | action | yes | yes |
 | Zoom | action | menu | yes |
 | Background | action | menu | yes |
 | Auto-extend | action | menu | yes |
-| Clear | action | menu | yes |
+
+**This drawing** is not a pen. It borrows the options row the same way the pen
+does, and holds the four things you do TO a drawing rather than on it: the
+outline, export, *open the note beside this*, and clear. Four buttons that are
+each used once in a while do not each deserve a place in the bar.
 
 Two buttons are **never** movable: *Save & close* and *Open in a Sketch tab*.
 Hiding the way out of an editor is not a preference.
