@@ -157,8 +157,6 @@ A month, what each day is for, and the tasks due on it.
 | `syncIntervalMin` | `15` |
 | `conflictPolicy` | `"server"` |
 | `dayTextKey` | `"important"` |
-| `planner.folder` | `"Planner"` |
-| `planner.pattern` | `"YYYY-MM"` |
 | `tasks.projectsFolder` | `"Tasks/Projects"` |
 | `tasks.itemsFolder` | `"Tasks/Items"` |
 | `tasks.providerDefault` | `"local"` |
@@ -373,7 +371,6 @@ Draw in a note with pen, touch or mouse.
 |---|---|
 | `home` | `false` |
 | `calendar` | `false` |
-| `tasks` | `false` |
 
 ### `theme` — Theme
 

@@ -5,9 +5,9 @@ sidebar:
   order: 8
 ---
 
-Every markdown note can own **one** drawing. The note holds nothing but its id —
-`sketch: sk-…` in the frontmatter — and the drawing itself lives in a Sketch tab,
-where there is room for it.
+Every markdown note can own a drawing with **pages**. The note holds nothing but
+their ids — `sketch: sk-…`, or a list once there is more than one — and the
+drawing itself lives in a Sketch tab, where there is room for it.
 
 ## The corner button
 
@@ -32,6 +32,22 @@ replaced by an empty one instead of an error.
 | Make a note that is only a drawing | Command **New sketch note** |
 | Open the current note's drawing | Command **Open this note's sketch** |
 | …beside it | Command **Open this note's sketch beside it** |
+
+## Pages
+
+| | |
+|---|---|
+| Next page | Throw one finger to the **left** |
+| The page before | Throw it to the **right** |
+| A new page | Throw it left off the **last** page |
+| All of them | The button next to the page count |
+
+Only at 100 %: zoomed in, sideways is how you look around the sheet.
+
+The page list shows every page as a thumbnail — the sidecars are ordinary SVGs,
+so the preview is the file itself. From there you can open a page, add one, or
+take one out of the note. Taking a page out leaves its `.svg` where it is: a
+drawing is worth more than the line that pointed at it.
 
 ## Why a tab and not the note
 

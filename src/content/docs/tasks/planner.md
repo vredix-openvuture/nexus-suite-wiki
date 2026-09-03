@@ -1,22 +1,31 @@
 ---
 title: The planner
-description: A month on one screen, with one line per day.
+description: A whole month of day texts, in a block.
 sidebar:
   order: 5
 ---
 
-A ```` ```nexus-planner ```` block is a month with **one line per day**.
+A ```` ```nexus-planner ```` block is a month on one screen, showing **the same
+text per day the calendar does**.
 
 ````md
 ```nexus-planner
 view: month
 month: 2026-09
-2026-09-03: Ship 0.25
-2026-09-11: Dentist, 14:00
 ```
 ````
 
 Command **Insert a planner** writes the skeleton for the current month.
+
+## One store, two views
+
+The fence says only *which* month. What a day says lives in
+[that day's own note](/tasks/calendar/#where-it-lives), so the block and the
+full-page calendar are one thing seen twice and cannot disagree. Typing in a
+cell writes to the note, not to the block.
+
+The sidebar **mini calendar** marks a day that has a text; a sidebar column is
+too narrow for a sentence.
 
 ## What it is for
 
@@ -34,19 +43,14 @@ shape of a month is visible without opening thirty of them.
 | `week` | any date in the week | today |
 | `title` | replaces the heading | the month or the week's range |
 | `weekstart` | `monday` · `sunday` | `monday` |
-| `YYYY-MM-DD` | the line for that day | — |
-
-Entries are written back sorted by date, so the block reads as a calendar and a
-diff shows what changed rather than where a line happened to be appended. An
-empty day is removed rather than stored blank, and a newline in a line is
-flattened — one line per day is the format.
 
 Anything the parser does not understand is kept and written back untouched.
 
 ## Using it
 
-- Click a cell and type. It saves when you leave the field or press
-  <kbd>Enter</kbd>; <kbd>Esc</kbd> puts back what was there.
+- Click a cell and type. `Ctrl` / `⌘ + Enter` finishes it, or click away;
+  `Esc` puts back what was there. Enter opens a new line — a day is a paragraph,
+  not a field.
 - The arrows page through months or weeks and write the new position back.
 - The dot returns to now.
 - The last button switches between the month and the week, keeping you where you
@@ -62,30 +66,20 @@ every single time.
 
 On a narrow screen the seven columns become two.
 
-## Not the calendar's day text
+## Lines an old block still holds
 
-[The calendar](/tasks/calendar/) also gives a month a text per day, but it keeps
-it in **that day's own note**, as a frontmatter field. The planner keeps its
-lines in **the block**. Two answers to the same question, and the calendar no
-longer reads the planner's — pick the storage you want.
+The block used to *be* the store: `2026-09-03: Ship 0.25` lines inside the
+fence, in a month note the plugin resolved from a folder and a pattern. Those
+lines are no longer read.
 
-The sidebar **mini calendar** marks a day that has either; a sidebar column is
-too narrow for a sentence.
+To carry them over, run **Move planner lines into the daily notes** — a command,
+and a button under *Settings → Calendar → Planner*.
 
-A planner month resolves to one note by two settings on the **Calendar** tab:
+| | |
+|---|---|
+| Before it writes | It counts what it found and says how many daily notes it would have to create |
+| A day whose note already has a text | Left exactly as it is, and reported as such |
+| The blocks | Keep their old lines, inert — nothing is deleted |
 
-| Setting | Default | |
-|---|---|---|
-| Planner folder | `Planner` | Empty means the vault root. |
-| File name | `YYYY-MM` | `YYYY`, `YY`, `MM`, `MMM`, `MMMM`. A slash makes a subfolder, so `YYYY/YYYY-MM` files each year separately. |
-
-September 2026 is then `Planner/2026-09.md`, holding one `nexus-planner` block.
-Nothing is guessed and nothing is written until you type:
-
-- a month with no note shows nothing and **creates no file** — the first line
-  you type creates the note *with* the block;
-- a note that already exists but holds no ```` ```nexus-planner ```` block is an
-  empty month, and a first line is **appended** rather than replacing anything
-  in it;
-- a note with more than one planner block uses the **first**; the rest are left
-  alone.
+So a run that went wrong costs nothing, and running it twice only picks up what
+was added since.

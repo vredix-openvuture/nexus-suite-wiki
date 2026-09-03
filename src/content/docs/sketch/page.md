@@ -57,7 +57,7 @@ the resting sheet width, and everything below is a way back to it.
 | `ctrl` / `⌘` + wheel | The desktop's pinch. A plain wheel still scrolls the page |
 | The **Zoom** button | `−`, the level, `+`, and *Page width (100 %)* |
 | The pill, bottom right | Always shows the level; tap it for page width |
-| Three fingers, one tap | Back to page width |
+| Two fingers, tapped twice | Back to page width |
 
 Once a sketch is zoomed past 1× it is wider than the note column, so it scrolls
 sideways to keep the right-hand edge reachable.
@@ -68,9 +68,15 @@ Fingers never draw — the pen does — so a tap is free to mean something else.
 
 | Gesture | Does |
 |---|---|
-| Three fingers, one tap | Back to page width |
+| Two fingers, tapped twice | Back to page width |
+| Three fingers, one tap | The same, where the OS lets three touches through |
 | Double tap | Undo |
 | Triple tap | Redo |
+| One finger thrown sideways | The next page, or the one before |
+
+Two fingers carry the zoom reset because three simultaneous touches are a system
+gesture on a lot of Android tablets and never reach the page at all. A *single*
+two-finger tap stays free: that is where a pinch begins and ends.
 
 Each one says what it did, briefly, at the bottom left of the pad — an undo of a
 stroke you had already forgotten looks exactly like nothing happening.

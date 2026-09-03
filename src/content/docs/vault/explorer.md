@@ -88,4 +88,3 @@ reopened if something detaches them anyway.
 |---|---|
 | `pinnedTabs.home` | off |
 | `pinnedTabs.calendar` | off |
-| `pinnedTabs.tasks` | off |
