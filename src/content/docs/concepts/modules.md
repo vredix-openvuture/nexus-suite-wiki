@@ -42,7 +42,7 @@ That is why the list is long without the plugin being heavy for any one person.
 | `quicksketch` | Quick Sketch | Draw in a note with pen, touch or mouse |
 | `inkCapture` | Ink Capture | Scans and handwriting from other apps |
 | `calendar` | Mini calendar | Month grid over your daily notes, in the sidebar |
-| `tasksCalendar` | Calendar | Local calendars, events and tasks — the full-page view |
+| `tasksCalendar` | Calendar | The month, what each day is for, and tasks |
 | `search` | Search | Weighted search over title, tags, headings, properties, text |
 | `workspaces` | Workspaces | Save and switch pane layouts |
 | `kanban` | Kanban | Columns and cards in a note, or every note of a folder — plus the board view of your tasks |
@@ -70,9 +70,9 @@ behaves the moment they are on:
 ## Two calendars, and which is which
 
 `calendar` is the **Mini calendar**: a month grid over your daily notes, in the
-sidebar. `tasksCalendar` is **Calendar**: the full-page month, week and day view
-over local calendars, events and tasks. They are separate modules because they
-answer different questions, and each can be off without the other.
+sidebar. `tasksCalendar` is **Calendar**: the full-page month, where each day
+carries what it is for and what is due on it. They are separate modules because
+they answer different questions, and each can be off without the other.
 
 The key `tasksCalendar` is a leftover from when the module was called CalDAV.
 Renaming a key means rewriting live `data.json` files, so the name changed and

@@ -144,7 +144,7 @@ Month grid over your daily notes, in the sidebar.
 
 ### `tasksCalendar` — Calendar
 
-Local calendars, events and tasks — the full-page view.
+A month, what each day is for, and the tasks due on it.
 
 | Key | Default |
 |---|---|
@@ -152,13 +152,11 @@ Local calendars, events and tasks — the full-page view.
 | `ribbon` | `true` |
 | `dataLocation` | `"plugin"` |
 | `dataFolder` | `"_nexus"` |
-| `defaultView` | `"month"` |
 | `weekStart` | `"locale"` |
 | `syncOnStartup` | `true` |
 | `syncIntervalMin` | `15` |
 | `conflictPolicy` | `"server"` |
-| `localCalendars` | `[]` |
-| `hiddenCalendars` | `[]` |
+| `dayTextKey` | `"important"` |
 | `planner.folder` | `"Planner"` |
 | `planner.pattern` | `"YYYY-MM"` |
 | `tasks.projectsFolder` | `"Tasks/Projects"` |
@@ -362,8 +360,6 @@ Draw in a note with pen, touch or mouse.
 | `ocr.command` | `"tesseract {in} {out} -l eng"` |
 | `ocr.onSave` | `false` |
 | `penProfile` | `"generic"` |
-| `hideFrontmatter` | `false` |
-| `immersive` | `false` |
 
 ### `ribbon`
 

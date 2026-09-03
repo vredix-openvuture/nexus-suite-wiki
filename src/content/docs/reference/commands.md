@@ -49,7 +49,6 @@ board and the link web are two blocks: **Insert a folder board** writes a
 | Create a folder note for this folder | Folder Notes |
 | New task project | Calendar |
 | New task | Calendar |
-| New event | Calendar |
 | Chatter (speak a note) | Chatter |
 | Capture a scan | Ink Capture |
 

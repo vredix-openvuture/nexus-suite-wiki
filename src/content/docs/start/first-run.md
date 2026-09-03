@@ -38,8 +38,8 @@ Turn on **Calendar** and run `New task project` — a project is a note, and its
 tasks are notes. See [Projects and tasks](/tasks/projects/). A Vikunja account
 is only needed if the tasks also live on a server; everything works without one.
 
-The module is called Calendar because it is also the full-page calendar and the
-local calendars. Its settings key is still `tasksCalendar`.
+The module is called Calendar because it also holds the full-page month, where
+each day carries what it is for. Its settings key is still `tasksCalendar`.
 
 ## 5. If you want the vault on more than one machine
 

@@ -73,7 +73,7 @@ A month or a week, one line per day. See [The planner](/tasks/planner/).
 
 ## `nexus-agenda`
 
-One day: events, tasks, backlinks. Every key is on
+One day: what it is for, what is due, what links to it. Every key is on
 [The agenda block](/tasks/agenda/).
 
 ## `nexus-board`

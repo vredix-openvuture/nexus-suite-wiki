@@ -62,20 +62,17 @@ every single time.
 
 On a narrow screen the seven columns become two.
 
-## The calendar shows the same line
+## Not the calendar's day text
 
-The full-page calendar's **month view** shows the planner's line for a day under
-the day number, and you can type one straight into the cell. Below 620px a cell
-is only 56px tall, so the empty *Plan…* hint is dropped there — a hint on every
-day would eat a third of the cell — and a day that already has a line still
-shows it and can still be edited. It sits *above* the event chips — the line says what the day is for, the chips say what is in it,
-and a cell clips from the bottom, so below them a busy day would hide exactly
-the sentence worth reading. One line, clipped: no cell changes height because of
-what was typed. The sidebar **mini calendar** only marks a day that has a line;
-a sidebar column is too narrow for a sentence.
+[The calendar](/tasks/calendar/) also gives a month a text per day, but it keeps
+it in **that day's own note**, as a frontmatter field. The planner keeps its
+lines in **the block**. Two answers to the same question, and the calendar no
+longer reads the planner's — pick the storage you want.
 
-Both write into the same block, so the two can never disagree. A month resolves
-to one note by two settings on the **Calendar** tab:
+The sidebar **mini calendar** marks a day that has either; a sidebar column is
+too narrow for a sentence.
+
+A planner month resolves to one note by two settings on the **Calendar** tab:
 
 | Setting | Default | |
 |---|---|---|

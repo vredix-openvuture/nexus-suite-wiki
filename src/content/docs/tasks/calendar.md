@@ -1,40 +1,65 @@
 ---
 title: Calendars and Vikunja
-description: Local calendars, events, and the accounts your tasks sync against.
+description: A month, what each day is for, and the accounts your tasks sync against.
 sidebar:
   order: 6
 ---
 
-The **Calendar** module holds the local calendars, the events, the tasks page
-and the Vikunja accounts the tasks sync against. It starts off.
+The **Calendar** module holds the month view, the tasks page and the Vikunja
+accounts the tasks sync against. It starts off.
 
 Its settings key is still `tasksCalendar`, although the module is called
 Calendar. The name is what you read; the key is what your `data.json` already
 contains, and renaming it would strand settings that are in use.
 
-:::note[CalDAV is gone, the calendar is not]
-The network layer under this module was removed: server discovery, the mirror of
-a server calendar, write-through for server events, and the two-way `VTODO` task
-sync. Local calendars, events, recurrence, the full-page view, its pinnable tab
-and the whole Vikunja sync work exactly as before.
+:::note[There are no events any more]
+CalDAV went first, and local calendars — the only source left — went after it,
+together with the event dialog, recurrence and the iCalendar parser. What
+replaced them is the day's text below. The tasks page, the Vikunja sync, the
+pinnable tab and the views all stay.
 
-An account left over from CalDAV is skipped with a message saying to remove it,
-rather than handed to the Vikunja client — its URL is a DAV path and its secret
-an app password, so it would fail on every run. A `calendar/remote/` folder in
-the data directory is now inert data: nothing reads it, and nothing deletes it
-either.
+**Nothing was deleted.** Any calendar JSON in the data folder is inert: nothing
+reads it, and nothing removes it either. See §6 of `docs/removed-features.md` in
+the repo for the account and the way back.
 :::
 
-## Calendars
+## What a day is for
 
-| Kind | What it is |
+Every cell of the month is a writing surface. Tap it and type — not one line,
+as much as fits. The text fills the cell and is clipped at the bottom rather
+than pushing the row taller, because a month whose rows change height as you
+write is not a month.
+
+| | |
 |---|---|
-| Local | A calendar that lives only in this vault, with a name and a colour |
-| Tasks | Not a calendar — your tasks' due dates, drawn alongside the events |
+| Save | `Ctrl` / `⌘` `+ Enter`, or tap away |
+| Cancel | `Esc` — puts back what was there |
+| Open the note | The day number, not the cell |
 
-Add a local calendar in Settings → Calendar. Events are edited in the event
-modal and stored in the calendar's own file; a repeat rule is expanded by the
-plugin when the view is drawn.
+### Where it lives
+
+In that day's own note, as one frontmatter field:
+
+```md
+---
+important: Ship 0.29, then rest
+---
+```
+
+Not in a plugin file. Obsidian's own search finds it, a template can prefill it,
+a Dataview query can read it, and it survives without this plugin.
+
+| Setting | Default |
+|---|---|
+| Frontmatter key | `important` |
+
+Writing on a day that has no note yet **creates one**, from your daily-note
+template. Clearing the text removes the field rather than leaving an empty one
+behind.
+
+Tasks with a due date ride along as chips under the text. The sidebar mini
+calendar only *marks* a day that has a text — a sidebar column is too narrow
+for a sentence.
 
 ## Accounts
 
@@ -72,7 +97,7 @@ It sits behind the same guard as the other features that need a desktop shell,
 and on mobile it says so: *Sync runs on desktop only (mobile reads the synced
 cache).* A phone reads and writes the task notes as ordinary notes — what it
 cannot do is talk to Vikunja, so the round trip happens the next time a desktop
-syncs. The local calendars, the events and the views all work everywhere.
+syncs. Writing a day's text and every view work everywhere.
 :::
 
 ## Data location
@@ -82,17 +107,17 @@ syncs. The local calendars, the events and the views all work everywhere.
 | `dataLocation` | `plugin` · `vault` | `plugin` |
 | `dataFolder` | any folder | `_nexus` |
 
-`plugin` keeps the calendar files in `.nexus-calendar` beside the plugin: out
+`plugin` keeps the plugin's own JSON in `.nexus-calendar` beside the plugin: out
 of the file explorer, out of search and out of the graph, and no plugin update
-touches them — but they only travel if your sync includes `.obsidian`. `vault`
-puts them in a folder of your choosing, where they are visible and syncable.
-Local calendars end up in `<data folder>/calendar/local/`, one JSON file each.
+touches it — but it only travels if your sync includes `.obsidian`. `vault` puts
+it in a folder of your choosing, where it is visible and syncable. What lives
+there now is the task-sync state; the day texts are in your daily notes.
 
 ## Views
 
 | | |
 |---|---|
-| Month, week or day, full page | Command **Open the full-page calendar** |
+| The month, full page | Command **Open the full-page calendar** |
 | The next seven days, in the sidebar | Command **Open the calendar in the sidebar** |
 | The tasks page, and the same in the sidebar | **Open the tasks page** · **Open the tasks in the sidebar** |
 | One day inside a note | The [agenda block](/tasks/agenda/) |
@@ -105,9 +130,9 @@ apart.
 
 All three Nexus pages can be [pinned to the tab bar](/vault/explorer/#pinned-tabs).
 
-## The month shows the planner
+## Not the planner
 
-A month view resolves to one note holding a `nexus-planner` block, shows that
-block's line for a day under the day number, and can write one there. Two
-surfaces, one store. The settings for where those notes live, and what is
-written when, are on [The planner](/tasks/planner/).
+[The planner](/tasks/planner/) block also gives a month one line per day, but it
+keeps those lines **in the block**. The calendar keeps its text **in the daily
+note**. Two answers to the same question, and the calendar no longer reads the
+planner's — pick the storage you want.
