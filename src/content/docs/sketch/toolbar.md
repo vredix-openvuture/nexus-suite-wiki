@@ -42,12 +42,12 @@ for a note and for the Sketch tab.
 | Redo | action | yes | yes |
 | Zoom | action | menu | yes |
 | Background | action | menu | yes |
-| Auto-extend | action | menu | yes |
 
-**This drawing** is not a pen. It borrows the options row the same way the pen
-does, and holds the four things you do TO a drawing rather than on it: the
-outline, export, *open the note beside this*, and clear. Four buttons that are
-each used once in a while do not each deserve a place in the bar.
+**This drawing** is not a pen, and does not sit among them: it is on the right,
+with the other things you do TO a drawing. It borrows the options row the same
+way the pen does and holds four labelled buttons — the outline, export, *open
+the note beside this*, and clear. Four buttons that are each used once in a
+while do not each deserve a place in the bar.
 
 Two buttons are **never** movable: *Save & close* and *Open in a Sketch tab*.
 Hiding the way out of an editor is not a preference.
