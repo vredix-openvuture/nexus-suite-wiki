@@ -89,6 +89,13 @@ count, or a tablet with the pen in your hand would never see a tap at all. In a
 code block in view mode only the zoom reset works: the drawing is read-only
 there.
 
+## Obsidian's own gestures
+
+They stop at the **canvas**, not at the view: a swipe down on the toolbar opens
+the command palette as it does anywhere else, and an edge swipe there still
+opens a drawer. On the paper neither fires — a finger there is navigating the
+drawing.
+
 ## Scrolling
 
 | Gesture | What it does |
