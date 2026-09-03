@@ -10,7 +10,6 @@ sidebar:
 | Key | Values | Meaning |
 |---|---|---|
 | `nexus-type` | `task` · `project` · `quicknote` | What kind of note this is |
-| `nexus` | `slate` | Render the note as [a page of paper](/sketch/slate/) |
 | `nexus-task` | `true` · `yes` · `y` · `1` | [This note is a task](/tasks/note-as-task/) |
 
 ## Tasks
@@ -37,8 +36,7 @@ sidebar:
 |---|---|
 | `title` | Overrides the file name wherever a title is shown |
 | `banner` | The banner image |
-| `sketch` | The id of the sketch belonging to a slate note |
-| `sketch-bg` | `native` · `paper` · `white` · `black`, for this note |
+| `sketch` | The id of [this note's drawing](/sketch/note/) |
 
 ## Chatter
 

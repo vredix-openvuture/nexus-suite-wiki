@@ -81,11 +81,10 @@ Because a wrong URL looks exactly like "the server deleted everything", and
 acting on that would delete your vault. See
 [How it decides](/sync/overview/).
 
-## Can I put a sketch in a normal note and also full screen?
+## Can I have a sketch in a note and also on its own?
 
-Yes — it is the same drawing. A sketch lives in its own file and the note refers
-to it, so the code block, the full-size editor, the split pane and a slate note
-are four views of one thing.
+Yes — it is the same drawing. A sketch lives in its own file and the note only
+refers to it, so the code block and the Sketch tab are two views of one thing.
 
 ## Why is my drawing an SVG and not a proprietary format?
 

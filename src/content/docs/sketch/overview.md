@@ -8,8 +8,8 @@ sidebar:
 A ```` ```quicksketch ```` block is a pad you draw on with a pen, a finger or a
 mouse. Pen pressure drives the width of the line.
 
-Insert one with the command **Insert a sketch**, or turn a whole note into a
-page of paper with **Toggle slate mode** — see [Slate notes](/sketch/slate/).
+Insert one with the command **Insert a sketch**. For a drawing that belongs to a
+note but is too big to sit in its text, see [A note's drawing](/sketch/note/).
 
 ## How a drawing is stored
 
@@ -27,12 +27,16 @@ standalone the moment it is copied.
 
 ## Where a sketch can appear
 
+Two places, one engine over one sidecar.
+
 | Where | How |
 |---|---|
 | Inside a note | The ` ```quicksketch ` block. Starts in view mode, tap the pencil to draw. |
-| Full window | The full-size button in the toolbar, or long-press it. |
-| Beside the note | Long-press or right-click the same button → open in a split. |
-| As the whole note | `nexus: slate` in the frontmatter. |
+| Its own tab | The block's `⛶` button, or a note's [corner button](/sketch/note/). Long-press either to pick where it opens. |
+
+A code block is a sketch in the flow of the text. A Sketch tab is the drawing on
+its own, with the full toolbar, the options row permanently in reach and room to
+zoom — anything longer than a doodle belongs there.
 
 ## Latency
 

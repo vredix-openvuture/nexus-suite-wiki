@@ -21,9 +21,6 @@ background pattern, so a grid stays legible on any of them.
 dark drawing stays readable while vivid colours keep their punch. It is
 non-destructive: colours are changed for display and export, never in the file.
 
-A single note can override the default with `sketch-bg: black` in its
-frontmatter.
-
 ## Background pattern
 
 `none` · `grid` · `graph` · `lines` · `dots` · `cross` · `isometric` ·
@@ -47,11 +44,41 @@ and the note looks like it grew.
 
 **Auto-extend** keeps blank paper below the pen while you write near the bottom,
 so a page never runs out mid-sentence. It is off by default in a note and always
-on in the full-size editor, where the whole point is an endless sheet.
+on in a Sketch tab, where the whole point is an endless sheet.
 
-Slate notes grow endlessly on their own, so the toggle does not appear there.
+## Zoom
 
-## Zoom and scrolling
+Zoom runs from **0.3×** — an overview of a long page — to **5×**. 1× is exactly
+the resting sheet width, and everything below is a way back to it.
+
+| | |
+|---|---|
+| Pinch | Two fingers on the canvas |
+| `ctrl` / `⌘` + wheel | The desktop's pinch. A plain wheel still scrolls the page |
+| The **Zoom** button | `−`, the level, `+`, and *Page width (100 %)* |
+| The pill, bottom right | Always shows the level; tap it for page width |
+| Three fingers, one tap | Back to page width |
+
+Once a sketch is zoomed past 1× it is wider than the note column, so it scrolls
+sideways to keep the right-hand edge reachable.
+
+## Finger shortcuts
+
+Fingers never draw — the pen does — so a tap is free to mean something else.
+
+| Gesture | Does |
+|---|---|
+| Three fingers, one tap | Back to page width |
+| Double tap | Undo |
+| Triple tap | Redo |
+
+Undo waits out the multi-tap window (about a quarter second) before it fires;
+otherwise every triple tap would undo something on its way to the redo. A tap
+within 600 ms of the pen touching or hovering is a palm and is ignored, so a hand
+resting mid-sentence cannot undo anything. In a code block in view mode only the
+zoom reset works — the drawing is read-only there.
+
+## Scrolling
 
 | Gesture | What it does |
 |---|---|
@@ -60,18 +87,6 @@ Slate notes grow endlessly on their own, so the toggle does not appear there.
 | Two fingers, pinching | Zooms |
 | Two fingers, parallel | Scrolls the page |
 | Pen or mouse | Always draws |
-
-Zoom runs from **0.3×** — an overview of a long page — to **5×**. Returning to
-exactly 1× restores the resting sheet width.
-
-Pinching works everywhere a sketch does: in the full-size editor, in a
-` ```quicksketch ` block inside a note, and in a slate note. A block and a slate
-note keep the note scroller in charge of vertical scrolling, so pinching there
-magnifies the sheet without taking the page over.
-
-Once a sketch is zoomed past 1× it is wider than the note column, so the block
-scrolls sideways to keep the right-hand edge reachable, and a small pill appears
-in its corner with the current level. Tapping the pill returns to 100%.
 
 A one-finger scroll now **coasts** after the finger lifts, with velocity taken
 from the tail of the drag. A drag-scroll that stops dead reads as slow however

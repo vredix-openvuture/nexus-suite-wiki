@@ -26,9 +26,9 @@ Both render the same row; only whether it is pinned differs.
 ## What is in the bar
 
 Every button below can be in the bar or in the bar's `⋯` menu, set separately
-for a note and for the full-size editor.
+for a note and for the Sketch tab.
 
-| Item | Kind | In a note by default | In the full editor |
+| Item | Kind | In a note by default | In a Sketch tab |
 |---|---|---|---|
 | Pen | tool | yes | yes |
 | Highlighter | tool | yes | yes |
@@ -41,12 +41,13 @@ for a note and for the full-size editor.
 | Export | action | menu | yes |
 | Undo | action | yes | yes |
 | Redo | action | yes | yes |
+| Zoom | action | menu | yes |
 | Background | action | menu | yes |
 | Auto-extend | action | menu | yes |
 | Clear | action | menu | yes |
 
-Three buttons are **never** movable: *Save & close*, *Full-size editor* and
-*Open beside the note*. Hiding the way out of an editor is not a preference.
+Two buttons are **never** movable: *Save & close* and *Open in a Sketch tab*.
+Hiding the way out of an editor is not a preference.
 
 At least one tool has to stay in the bar. Turning the last one off is refused.
 

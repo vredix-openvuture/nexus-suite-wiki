@@ -35,8 +35,9 @@ board and the link web are two blocks: **Insert a folder board** writes a
 | Command | Module |
 |---|---|
 | Insert a sketch | Quick Sketch |
-| New slate (drawing note) | Quick Sketch |
-| Toggle slate mode | Quick Sketch |
+| New sketch note | Quick Sketch |
+| Open this note's sketch | Quick Sketch |
+| Open this note's sketch beside it | Quick Sketch |
 | Insert a kanban board | Kanban |
 | New kanban board (note) | Kanban |
 | Insert a planner | Planner |

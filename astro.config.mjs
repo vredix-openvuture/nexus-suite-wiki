@@ -56,7 +56,7 @@ export default defineConfig({
 						{ label: 'Pen buttons', slug: 'sketch/pen' },
 						{ label: 'Export', slug: 'sketch/export' },
 						{ label: 'Finding a sketch again', slug: 'sketch/search' },
-						{ label: 'Slate notes', slug: 'sketch/slate' },
+						{ label: "A note's drawing", slug: 'sketch/note' },
 					],
 				},
 				{
